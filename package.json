@@ -42,13 +42,14 @@
     "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
     "@vercel/git-hooks": "1.0.0",
     "autoprefixer": "10.4.19",
+    "cross-env": "7.0.3",
     "eslint": "9.0.0",
     "eslint-config-next": "14.2.2",
+    "next-images": "1.8.5",
     "lint-staged": "15.2.2",
     "postcss": "8.4.38",
     "prettier": "3.2.5",
     "prettier-plugin-tailwindcss": "0.5.14",
-    "cross-env": "7.0.3",
     "tailwindcss": "3.4.3",
     "typescript": "5.4.5"
   }
