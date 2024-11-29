@@ -7,7 +7,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="[color-scheme:dark]">
-      <body className="overflow-y-scroll bg-gray-1100 bg-[url('/seongnam-roa/grid.svg')] pb-36">
+      <link rel="icon" href="/seongnam-roa/favicon.ico" />
+      <body className="overflow-y-scroll bg-gray-1100 bg-[url('/grid.svg')] pb-36">
         <div className="lg:pl-72">
           <div className="mx-auto max-w-4xl space-y-8 px-2 pt-20 lg:px-8 lg:py-8">
             <div className="rounded-lg bg-vc-border-gradient p-px shadow-lg shadow-black/20">

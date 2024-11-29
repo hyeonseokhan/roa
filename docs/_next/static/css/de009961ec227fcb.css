@@ -530,8 +530,8 @@ select {
   background-color: rgb(10 10 11/var(--tw-bg-opacity))
 }
 
-.bg-\[url\(\'\/seongnam-roa\/grid\.svg\'\)\] {
-  background-image: url(/seongnam-roa/grid.svg)
+.bg-\[url\(\'\/grid\.svg\'\)\] {
+  background-image: url(/grid.svg)
 }
 
 .bg-vc-border-gradient {
