@@ -3,7 +3,7 @@ const { homepage } = require('./package.json');
 const { NODE_ENV } = process.env;
 
 module.exports = {
-  assetPrefix:
+  basePath:
     NODE_ENV === 'prod' && homepage
       ? new URL(homepage).pathname.replace(/\/$/, '') || ''
       : '',
