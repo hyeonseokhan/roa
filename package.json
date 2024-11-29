@@ -1,11 +1,13 @@
 {
   "private": true,
   "packageManager": "pnpm@9.14.2+sha512.6e2baf77d06b9362294152c851c4f278ede37ab1eba3a55fda317a4a17b209f4dbb973fb250a77abc463a341fcb1f17f17cfa24091c4eb319cda0d9b84278387",
-  "name": "sengnam-roa",
+  "name": "seongnam-roa",
   "version": "1.0.0",
+  "homepage": "https://hyeonseokhan.github.io/seongnam-roa",
   "scripts": {
     "start": "next start",
     "prebuild": "pnpm run clean",
+    "postbuild": "node shellwork.js",
     "build": "next build",
     "clean": "rm -rf docs .next",
     "dev": "next dev",
@@ -20,13 +22,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/hyeonseokhan/sengnam-roa.git"
+    "url": "https://github.com/hyeonseokhan/seongnam-roa.git"
   },
   "dependencies": {
     "@heroicons/react": "2.1.3",
+    "chalk": "4.1.2",
     "next": "15.0.0-canary.193",
     "react": "19.0.0-rc-cd22717c-20241013",
     "react-dom": "19.0.0-rc-cd22717c-20241013",
+    "shelljs": "0.8.5",
     "styled-components": "6.1.8",
     "vercel": "34.0.0"
   },
