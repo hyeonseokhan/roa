@@ -4,11 +4,14 @@
   "name": "sengnam-roa",
   "version": "1.0.0",
   "scripts": {
+    "start": "next start",
+    "build": "next build",
+    "dev": "next dev",
+    "test": "pnpm prettier:check && pnpm lint",
     "lint": "next lint",
     "lint-staged": "lint-staged",
     "prettier": "prettier --write --ignore-unknown .",
-    "prettier:check": "prettier --check --ignore-unknown .",
-    "test": "pnpm prettier:check && pnpm lint"
+    "prettier:check": "prettier --check --ignore-unknown ."
   },
   "lint-staged": {
     "*": "prettier --write --ignore-unknown"
