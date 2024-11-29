@@ -1,5 +1,9 @@
 import '#/styles/globals.css';
 
+import pkg from '#/package.json';
+
+const homepage = pkg.homepage;
+
 export default function RootLayout({
   children,
 }: {
@@ -7,8 +11,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="[color-scheme:dark]">
-      <link rel="icon" href="/seongnam-roa/favicon.ico" />
-      <body className="overflow-y-scroll bg-gray-1100 bg-[url('/grid.svg')] pb-36">
+      <head>
+        <title>로스트아크 게임 도구</title>
+        <link rel="icon" href={`${homepage}/favicon.ico`} />
+      </head>
+      <body
+        className="overflow-y-scroll bg-gray-1100 pb-36"
+        style={{ backgroundImage: `url('${homepage}/grid.svg')` }}
+      >
         <div className="lg:pl-72">
           <div className="mx-auto max-w-4xl space-y-8 px-2 pt-20 lg:px-8 lg:py-8">
             <div className="rounded-lg bg-vc-border-gradient p-px shadow-lg shadow-black/20">
