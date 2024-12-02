@@ -1,11 +1,6 @@
 /** @type {import('next').NextConfig} */
-const { name } = require('./package.json');
-const { NODE_ENV } = process.env;
-
 module.exports = {
-  basePath: NODE_ENV === 'prod' && name ? '/' + name || '' : '',
-  assetPrefix: NODE_ENV === 'prod' && name ? '/' + name || '' : '',
-  trailingSlash: true,
+  basePath: '/seongnam-roa',
   output: 'export',
-  distDir: 'docs',
+  distDir: 'docs'
 };
