@@ -33,7 +33,7 @@ export function HistoryTable() {
           <thead className="bg-gray-200 text-center text-xs uppercase text-gray-1000 dark:text-gray-400">
             <tr>
               <th scope="col" className="py-3">
-                골드 가격
+                골드 시세
               </th>
               <th scope="col" className="py-3">
                 골드 구매량

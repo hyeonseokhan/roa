@@ -62,7 +62,7 @@ export function InputForm() {
                 alt="gold"
                 src="https://cdn.rloa.gg/icons/gold.png"
               />
-              골드 가격
+              골드 단위
             </div>
             <input
               type="text"

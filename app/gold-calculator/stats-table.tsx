@@ -15,7 +15,7 @@ export function StatsTable() {
           <thead className="bg-gray-200 text-center text-xs uppercase text-gray-1000 dark:text-gray-400">
             <tr>
               <th scope="col" className="py-3">
-                골드 가격 평균
+                골드 시세 평균
               </th>
               <th scope="col" className="py-3">
                 골드 구매 합계
