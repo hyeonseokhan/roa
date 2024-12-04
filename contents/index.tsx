@@ -4,10 +4,10 @@ export type Content = {
   description?: string;
 };
 
-export const Contents: { name: string; contents: Content[] }[] = [
+export const Contents: { name: string; apps: Content[] }[] = [
   {
     name: 'Calculator',
-    contents: [
+    apps: [
       {
         name: '골드구매 계산기',
         slug: 'gold-calculator',

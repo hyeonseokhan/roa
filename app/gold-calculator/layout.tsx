@@ -7,6 +7,7 @@ export const metadata = {
   title,
   openGraph: {
     title,
+    images: ["https://cdn.rloa.gg/icons/gold.png"]
   },
 };
 

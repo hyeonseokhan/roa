@@ -15,7 +15,7 @@ export default function Page() {
                 {section.name}
               </div>
               <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
-                {section.contents.map((item) => {
+                {section.apps.map((item) => {
                   return (
                     <Link
                       href={`/${item.slug}`}

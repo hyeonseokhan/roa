@@ -20,13 +20,17 @@ export function InputForm() {
   ) => {
     const input = event.currentTarget.value;
     if (/[^0-9,]/.test(input)) {
-      event.currentTarget.value = '';
+      return;
     }
     const number = input.replace(/,/g, '');
     setFormData({ ...formData, [key]: number });
   };
 
   const doCalculation = () => {
+    if (!formData.cash || !formData.goldAmount) {
+      alert('계산에 필요한 모든 값을 입력해 주세요')
+      return;
+    }
     const pricePerGold = parseFloat(formData.cash) / parseFloat(formData.gold);
     const cashExpense = Math.floor(
       parseFloat(formData.goldAmount) * pricePerGold,
