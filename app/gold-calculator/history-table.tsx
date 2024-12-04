@@ -12,7 +12,7 @@ export function HistoryTable() {
   };
   return (
     <div className="space-y-6">
-      <div className="grid grid-cols-2">
+      <div className="grid grid-cols-[auto,1fr]">
         <h1 className="text-xl font-bold text-gray-300">골드 계산 이력</h1>
         <div className="flex items-end justify-end">
           <img

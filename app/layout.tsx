@@ -1,6 +1,7 @@
 import '#/styles/globals.css';
 
-import {GlobalNav} from "#/ui/global-nav";
+import { GlobalNav } from '#/ui/global-nav';
+import Byline from '#/ui/byline';
 import pkg from '#/package.json';
 
 const homepage = pkg.homepage;
@@ -25,6 +26,7 @@ export default function RootLayout({
             <div className="rounded-lg bg-vc-border-gradient p-px shadow-lg shadow-black/20">
               <div className="rounded-lg bg-black p-3.5 lg:p-6">{children}</div>
             </div>
+            <Byline />
           </div>
         </div>
       </body>
