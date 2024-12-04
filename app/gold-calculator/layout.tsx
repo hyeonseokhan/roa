@@ -1,7 +1,5 @@
-// import { getCategories } from '#/app/api/categories/getCategories';
-// import { ClickCounter } from '#/ui/click-counter';
-// import { TabGroup } from '#/ui/tab-group';
 import React from 'react';
+import { HistoryProvider } from '#/app/gold-calculator/calculator-context';
 
 const title = '골드구매 계산기';
 
@@ -17,5 +15,5 @@ export default async function Layout({
 }: {
   children: React.ReactNode;
 }) {
-  return <div className="space-y-9">{children}</div>;
+  return <HistoryProvider>{children}</HistoryProvider>;
 }

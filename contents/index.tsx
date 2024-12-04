@@ -10,7 +10,7 @@ export const Contents: { name: string; contents: Content[] }[] = [
     contents: [
       {
         name: '골드구매 계산기',
-        slug: 'calculators',
+        slug: 'gold-calculator',
         description: '골드 구매시 시세와 거래 수수료를 계산해 주는 도구',
       },
     ],
