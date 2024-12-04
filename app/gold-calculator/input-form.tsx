@@ -67,8 +67,8 @@ export function InputForm() {
             <input
               type="text"
               value={Number(formData.gold).toLocaleString()}
-              placeholder="100"
               disabled
+              onClick={(e) => e.currentTarget.value = ''}
               onChange={(e) => handleInputData(e, 'gold')}
               className="mt-2 block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-500 outline outline-1 -outline-offset-1 outline-gray-300  focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
             />
@@ -81,7 +81,7 @@ export function InputForm() {
             <input
               type="text"
               value={Number(formData.cash).toLocaleString()}
-              placeholder="50"
+              onClick={(e) => e.currentTarget.value = ''}
               onChange={(e) => handleInputData(e, 'cash')}
               className="mt-2 block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-500 outline outline-1 -outline-offset-1 outline-gray-300  focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
             />
@@ -96,7 +96,7 @@ export function InputForm() {
             <input
               type="text"
               value={Number(formData.goldAmount).toLocaleString()}
-              placeholder="0"
+              onClick={(e) => e.currentTarget.value = ''}
               onChange={(e) => handleInputData(e, 'goldAmount')}
               className="mt-2 block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-500 outline outline-1 -outline-offset-1 outline-gray-300  focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
             />

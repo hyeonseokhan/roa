@@ -1,7 +1,7 @@
 'use client';
 
 import {Content, Contents} from '#/contents';
-import { AppLogoDark } from '#/app/app-logo';
+import { AppLogoDark } from '#/ui/app-logo';
 import Link from 'next/link';
 import { useSelectedLayoutSegment } from 'next/navigation';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';

@@ -14,26 +14,26 @@ export function StatsTable() {
         <table className="w-full text-left text-sm text-gray-500 dark:text-gray-400 rtl:text-right rounded-[0.5rem] overflow-hidden">
           <thead className="bg-gray-200 text-center text-xs uppercase text-gray-1000 dark:text-gray-400">
             <tr>
-              <th scope="col" className="px-6 py-3">
-                평균 골드 가격
+              <th scope="col" className="py-3">
+                골드 가격 평균
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="py-3">
                 골드 구매 합계
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="py-3">
                 현금 지출 합계
               </th>
-              <th scope="col" className="px-6 py-3">
-                실수령 골드 합계
+              <th scope="col" className="py-3">
+                수령 골드 합계
               </th>
             </tr>
           </thead>
           <tbody>
             <tr className="border-b bg-white text-center dark:border-gray-700 dark:bg-gray-800">
-              <td className="px-6 py-2">{average.averageCash}</td>
-              <td className="px-6 py-2">{average.totalGoldAmount}</td>
-              <td className="px-6 py-2">{average.totalCashExpense}</td>
-              <td className="px-6 py-2">{average.totalDeductedGold}</td>
+              <td className="py-2">{average.averageCash}</td>
+              <td className="py-2">{average.totalGoldAmount}</td>
+              <td className="py-2">{average.totalCashExpense}</td>
+              <td className="py-2">{average.totalDeductedGold}</td>
             </tr>
           </tbody>
         </table>
