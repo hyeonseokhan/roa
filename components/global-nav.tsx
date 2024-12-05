@@ -1,12 +1,12 @@
 'use client';
 
-import {Content, Contents} from '#/contents';
-import { AppLogoDark } from '#/ui/app-logo';
 import Link from 'next/link';
+import { useState } from 'react';
 import { useSelectedLayoutSegment } from 'next/navigation';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
 import clsx from 'clsx';
-import { useState } from 'react';
+import { siteConfig } from '#/config/site';
+import { AppLogoDark } from '#/components/app-logo';
 
 export function GlobalNav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,9 +23,8 @@ export function GlobalNav() {
           <div className="h-7 w-7 rounded-full">
             <AppLogoDark />
           </div>
-
           <h3 className="font-semibold tracking-wide text-gray-400 group-hover:text-gray-50">
-            로스트아크 게임 도구 모음
+            {siteConfig.name}
           </h3>
         </Link>
       </div>
@@ -51,15 +50,15 @@ export function GlobalNav() {
         })}
       >
         <nav className="space-y-6 px-2 pb-24 pt-5">
-          {Contents.map((section) => {
+          {siteConfig.categories.map((category) => {
             return (
-              <div key={section.name}>
+              <div key={category.name}>
                 <div className="mb-2 px-3 text-xs font-semibold uppercase tracking-wider text-gray-400/80">
-                  <div>{section.name}</div>
+                  <div>{category.name}</div>
                 </div>
 
                 <div className="space-y-1">
-                  {section.apps.map((app) => (
+                  {category.apps.map((app) => (
                     <GlobalNavItem key={app.slug} content={app} close={close} />
                   ))}
                 </div>
@@ -76,7 +75,7 @@ function GlobalNavItem({
   content,
   close,
 }: {
-  content: Content;
+  content: { name: string; slug: string; description: string };
   close: () => false | void;
 }) {
   const segment = useSelectedLayoutSegment();

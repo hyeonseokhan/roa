@@ -3,6 +3,7 @@
 import React, { useMemo } from 'react';
 
 type History = {
+  uuid: string;
   gold: string;
   cash: string;
   goldAmount: string;
