@@ -1,82 +1,87 @@
 'use client';
 
-import React from 'react';
-import Image from 'next/image';
+import React, { useState } from 'react';
 import { TrashIcon } from '@heroicons/react/24/outline';
 import { useCalculator } from '#/app/gold-calculator/calculator-context';
+import {
+  Button,
+  Table,
+  TableBody,
+  TableCell,
+  TableColumn,
+  TableHeader,
+  TableRow,
+  Tooltip,
+} from '@nextui-org/react';
 
 export function HistoryTable() {
   const context = useCalculator();
-  const handleDelete = (index: number) => {
-    context.setHistory(context.histories.filter((_, i) => i !== index));
+  const handleDelete = (uuid: string) => {
+    context.setHistory(
+      context.histories.filter((history) => history.uuid !== uuid),
+    );
+  };
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleToolTip = () => {
+    setIsOpen(!isOpen);
   };
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-[auto,1fr]">
         <h1 className="text-xl font-bold text-gray-300">골드 계산 이력</h1>
-        <div className="flex items-end justify-end">
-          <Image
-            className="m-0 mr-1 h-4 w-4"
-            alt="gold"
-            src="https://cdn.rloa.gg/icons/gold.png"
-          />
-          <span className="text-xs font-semibold text-gray-100">수령 골드</span>
-          <span className="text-xs font-normal text-gray-300">
-            : 거래 수수료 -5% 적용
-          </span>
-        </div>
       </div>
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
-        <table className="w-full overflow-hidden rounded-[0.5rem] text-left text-sm text-gray-500 dark:text-gray-400 rtl:text-right">
-          <thead className="bg-gray-200 text-center text-xs uppercase text-gray-1000 dark:text-gray-400">
-            <tr>
-              <th scope="col" className="py-3">
-                골드 시세
-              </th>
-              <th scope="col" className="py-3">
-                골드 구매량
-              </th>
-              <th scope="col" className="py-3">
-                현금 지출
-              </th>
-              <th scope="col" className="py-3">
-                수령 골드
-              </th>
-              <th scope="col" className="py-3">
-                삭제
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {context.histories.map((history, index) => (
-              <tr
-                key={history.uuid}
-                className="border-b bg-white text-center dark:border-gray-700 dark:bg-gray-800"
+        <Table removeWrapper aria-label="골드 계산 이력">
+          <TableHeader>
+            <TableColumn align="center">골드 시세</TableColumn>
+            <TableColumn align="center">골드 구매량</TableColumn>
+            <TableColumn align="center">현금 지출</TableColumn>
+            <TableColumn align="center">
+              <Tooltip
+                content="게임 내 거래 수수료 -5% 적용"
+                isOpen={isOpen}
+                onClick={toggleToolTip}
+                showArrow={true}
+                closeDelay={100}
+                className={'text-xs font-normal text-gray-300'}
               >
-                <td className="py-2">
-                  <div>{parseFloat(history.cash).toLocaleString()}</div>
-                </td>
-                <td className="py-2">
+                <span onClick={toggleToolTip} className="underline">
+                  수령 골드
+                </span>
+              </Tooltip>
+            </TableColumn>
+            <TableColumn align="center">삭제</TableColumn>
+          </TableHeader>
+          <TableBody>
+            {context.histories.map((history) => (
+              <TableRow key={history.uuid}>
+                <TableCell align="center">
+                  {parseFloat(history.cash).toLocaleString()}
+                </TableCell>
+                <TableCell align="center">
                   {parseFloat(history.goldAmount).toLocaleString()}
-                </td>
-                <td className="py-2">
+                </TableCell>
+                <TableCell align="center">
                   {parseFloat(history.cashExpense).toLocaleString()}
-                </td>
-                <td className="py-2">
+                </TableCell>
+                <TableCell align="center">
                   {parseFloat(history.deductedGold).toLocaleString()}
-                </td>
-                <td className="py-2">
-                  <button
-                    onClick={() => handleDelete(index)}
-                    className="text-gray-500"
+                </TableCell>
+                <TableCell align="center">
+                  <Button
+                    isIconOnly
+                    size="sm"
+                    aria-label="trash"
+                    variant="light"
+                    onClick={() => handleDelete(history.uuid)}
                   >
-                    <TrashIcon className="text-gray-500 transition-colors duration-200 hover:text-amber-500" />
-                  </button>
-                </td>
-              </tr>
+                    <TrashIcon className="size-4 text-gray-400" />
+                  </Button>
+                </TableCell>
+              </TableRow>
             ))}
-          </tbody>
-        </table>
+          </TableBody>
+        </Table>
       </div>
     </div>
   );

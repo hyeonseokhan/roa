@@ -26,7 +26,12 @@ const AppModal = ({ isOpen, onClose, title, message }: ModalProps) => {
             <p>{message}</p>
           </ModalBody>
           <ModalFooter>
-            <Button color="default" variant="light" onPress={onClose}>
+            <Button
+              color="default"
+              variant="light"
+              onPress={onClose}
+              className="text-amber-500"
+            >
               Close
             </Button>
           </ModalFooter>

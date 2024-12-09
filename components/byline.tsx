@@ -4,7 +4,7 @@ export default function Byline() {
       <div className="flex flex-col justify-between space-y-2 rounded-lg bg-black p-3.5 lg:px-5 lg:py-3">
         <div className="flex items-center gap-x-1.5">
           <div className="text-sm text-gray-400">By</div>
-          <a href="https://github.com/hyeonseokhan" title="Toycode">
+          <a className="text-white" href="https://github.com/hyeonseokhan" title="Toycode">
             Toycode
           </a>
         </div>

@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import Image from 'next/image';
 import { useCalculator } from '#/app/gold-calculator/calculator-context';
 import AppModal from '#/components/app-modal';
 import { v4 as uuidv4 } from 'uuid';
@@ -37,7 +36,7 @@ export function InputForm() {
   };
   const doCalculation = () => {
     if (!formData.cash || !formData.goldAmount) {
-      openModal('🚨 입력값 오류', '계산에 필요한 모든 값을 입력해 주세요 🙏');
+      openModal('입력값 오류', '계산에 필요한 모든 값을 입력해 주세요 🙏');
       return;
     }
     const pricePerGold = parseFloat(formData.cash) / parseFloat(formData.gold);
@@ -67,11 +66,6 @@ export function InputForm() {
         <div className="mb-6 grid grid-cols-2 gap-4">
           <div>
             <div className="flex items-center text-sm font-semibold text-amber-500">
-              <Image
-                className="m-0 mr-2 h-5 w-5"
-                alt="gold"
-                src="https://cdn.rloa.gg/icons/gold.png"
-              />
               골드 단위
             </div>
             <input
@@ -85,7 +79,6 @@ export function InputForm() {
           </div>
           <div>
             <div className="flex items-center text-sm font-semibold text-amber-500">
-              <span className="m-0 mr-2 h-5 w-5">💵</span>
               원화 가격
             </div>
             <input
@@ -100,7 +93,6 @@ export function InputForm() {
         <div className="mb-6 grid grid-cols-1">
           <div>
             <div className="flex items-center text-sm font-semibold text-amber-500">
-              <span className="m-0 mr-2 h-5 w-5">💰</span>
               구매할 골드 수량
             </div>
             <input
