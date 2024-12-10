@@ -25,20 +25,24 @@ export function StatsTable() {
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
         <Table removeWrapper aria-label="골드 계산 통계">
           <TableHeader>
-            <TableColumn align="center">골드 시세 평균</TableColumn>
-            <TableColumn align="center">골드 구매 합계</TableColumn>
-            <TableColumn align="center">현금 지출 합계</TableColumn>
+            <TableColumn align="center">골드 시세</TableColumn>
+            <TableColumn align="center">골드 구매량</TableColumn>
+            <TableColumn align="center">현금 지출</TableColumn>
             <TableColumn align="center">
               <Tooltip
                 content="게임 내 거래 수수료 -5% 적용"
                 isOpen={isOpen}
-                onClick={toggleToolTip}
                 showArrow={true}
+                placement={"top-end"}
                 closeDelay={100}
                 className={'text-xs font-normal text-gray-300'}
               >
-                <span onClick={toggleToolTip} className="underline">
-                  수령 골드 합계
+                <span
+                  onClick={toggleToolTip}
+                  onTouchStart={toggleToolTip}
+                  className="underline"
+                >
+                  수령 골드
                 </span>
               </Tooltip>
             </TableColumn>

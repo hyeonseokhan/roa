@@ -40,12 +40,15 @@ export function HistoryTable() {
               <Tooltip
                 content="게임 내 거래 수수료 -5% 적용"
                 isOpen={isOpen}
-                onClick={toggleToolTip}
                 showArrow={true}
                 closeDelay={100}
                 className={'text-xs font-normal text-gray-300'}
               >
-                <span onClick={toggleToolTip} className="underline">
+                <span
+                  onClick={toggleToolTip}
+                  onTouchStart={toggleToolTip}
+                  className="underline"
+                >
                   수령 골드
                 </span>
               </Tooltip>

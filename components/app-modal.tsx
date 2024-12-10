@@ -18,7 +18,7 @@ interface ModalProps {
 
 const AppModal = ({ isOpen, onClose, title, message }: ModalProps) => {
   return (
-    <Modal isOpen={isOpen} onOpenChange={(isOpen) => !isOpen && onClose()}>
+    <Modal isOpen={isOpen} onOpenChange={(isOpen) => !isOpen && onClose()} placement={"center"}>
       <ModalContent>
         <>
           <ModalHeader className="flex flex-col gap-1">{title}</ModalHeader>
